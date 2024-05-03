@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  
+
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Cloud Native Buildpacks provide a unique solution to the image build process. See how it compares to the alternatives."/>
+<link rel="canonical" content="https://buildpacks.io/features/">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+
+
+
+
+
+<meta property="og:title" content="Features · Cloud Native Buildpacks">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://buildpacks.io/features/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Cloud Native Buildpacks">
+<meta property="og:description" content="Cloud Native Buildpacks provide a unique solution to the image build process. See how it compares to the alternatives.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://buildpacks.io/images/buildpacks-social-card.jpg">
+<meta property="og:image:alt" content="Buildpacks project logo">
+<meta property="og:image:type" content="image/jpeg">
+
+
+
+
+
+
+<meta property="twitter:title" content="Features · Cloud Native Buildpacks">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:image" content="https://buildpacks.io/images/buildpacks-social-card-square.jpg">
+<meta property="twitter:image:alt" content="Buildpacks project logo">
+<meta property="twitter:site" content="@buildpacks_io">
+<meta property="twitter:creator" content="@buildpacks_io">
+
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/axios@0.21.0,npm/jquery@3.5.1,npm/bootstrap@4.5.3,npm/fullcalendar@5.4.0,npm/jquery-replacetext@1.1.0/replacetext.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/combine/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css,npm/fullcalendar@5.4.0/main.min.css"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Source+Sans+Pro:400,400i,600" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://buildpacks.io/scss/site.css" integrity="" media="screen">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJLSR4FQXL"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.6.1/asciinema-player.min.css"
+    integrity="sha512-tv24MiwP+0CRCL80VsmJYPl/xDD2tdlDMz9fhNCIAQ6UPrj6Kh/57hOt9A4YnoNDKH5QDxJqGhtt9NPW2sgQeg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+  <style type="text/css">
+    .asciinema-theme-asciinema .fg-15 {
+        color: #6a2929;
+    }
+    .asciinema-theme-asciinema .asciinema-terminal {
+        color: #888888;
+    }
+  </style>
+
+  <script>
+    $(function () {
+      $('h1[id], h2[id], h3[id], h4[id], h5[id]').not(':has(a)').each(function () {
+        this.innerHTML =
+          `<a href="#${this.id}" class="h-anchor">
+            ${this.innerHTML} <i class="fas fa-link icon" aria-label="Anchor"></i>
+          </a>`;
+      });
+
+      if ($('input#search').length > 0) {
+        docsearch({
+          apiKey: '5c00a51f166dab99e1cc6e0a9976e9f9',
+          indexName: 'buildpacks',
+          inputSelector: 'input#search',
+          debug: false
+        });
+      }
+    });
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CJLSR4FQXL');
+  </script>
+
+  <title>Features · Cloud Native Buildpacks</title>
+</head>
+
+<body>
+  <header class="container px-0">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a href="https://buildpacks.io/" class="logo navbar-brand"><img src="/images/buildpacks-logo.svg"
+        alt="Buildpacks Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        
+        
+        
+        <li class="nav-item mr-lg-4 text-center text-lg-left ">
+          <a class="nav-link py-2 py-lg-0 px-1"  href="/features">
+            Features
+          </a>
+        </li>
+        
+        
+        <li class="nav-item mr-lg-4 text-center text-lg-left ">
+          <a class="nav-link py-2 py-lg-0 px-1"  href="/community">
+            Community
+          </a>
+        </li>
+        
+        
+        <li class="nav-item mr-lg-4 text-center text-lg-left ">
+          <a class="nav-link py-2 py-lg-0 px-1" target='_blank'  href="https://medium.com/buildpacks">
+            Blog
+          </a>
+        </li>
+        
+        
+        <li class="nav-item mr-lg-4 text-center text-lg-left ">
+          <a class="nav-link py-2 py-lg-0 px-1" target='_blank'  href="https://registry.buildpacks.io/">
+            Registry
+          </a>
+        </li>
+        
+        <li class="nav-item text-center d-lg-none">
+          <a class="nav-link py-2 px-1" href="/docs">Docs</a>
+        </li>
+        <li class="nav-item text-center d-lg-none">
+          <a class="nav-link py-2 px-1" target='_blank' rel="noopener noreferrer" href="https://github.com/buildpacks">GitHub</a>
+        </li>
+      </ul>
+
+      <a class="button-light mr-3 d-none d-lg-block" href="/docs"><i class="far fa-file-alt mr-2"></i>Docs</a>
+      <a class="github-button icon-button bg-blue button d-none d-lg-flex" href="https://github.com/buildpacks">GitHub</a>
+    </div>
+  </nav>
+</header>
+
+  
+
+<div class='docs'>
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-12 docs-content'>
+        <div class="support-links text-right">
+  
+    
+    
+    <a href="https://github.com/buildpacks/docs/issues/new?body=%2A%2AOn&#43;Page%3A%2A%2A&#43;%5BFeatures%5D%28https%3A%2F%2Fbuildpacks.io%2Ffeatures%2F%29"
+       class="button-light button-small icon-button blank bg-white inline-flex" target="_blank">Report Issue</a>
+
+    
+    
+    <a href="https://github.com/buildpacks/docs/edit/main/content/features.md?description=Signed-off-by%3A&#43;NAME&#43;%3CEMAIL_ADDRESS%3E%0A%0A%3E&#43;_By&#43;signing&#43;off&#43;you&#43;acknowledge&#43;adhering&#43;to&#43;the&#43;requirements&#43;listed&#43;here%3A&#43;https%3A%2F%2Fprobot.github.io%2Fapps%2Fdco%2F_"
+       class="button-light button-small icon-button github-button bg-white inline-flex" target="_blank">Edit</a>
+    
+  
+</div>
+
+
+        <div class="heading">
+          <h1 class="title">Features</h1>
+        </div>
+
+        <div class='grid'>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Advanced Caching</h2>Robust caching is used to improve performance.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Auto-detection</h2>Images can be built directly from application source without additional instructions.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Bill-of-Materials</h2>Insights into the contents of the app image through standard build-time SBOMs in <a href="https://cyclonedx.org/">CycloneDX</a>, <a href="https://spdx.dev/">SPDX</a> and <a href="https://github.com/anchore/syft">Syft JSON</a> formats.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Modular / Pluggable</h2>Multiple buildpacks can be used to create an app image.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Multi-language</h2>Supports more than one programming language family.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Multi-process</h2>Image can have multiple entrypoints for each operational mode.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Minimal app image</h2>Image contains only what is necessary.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Rebasing</h2>Instant updates of base images without re-building.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Reproducibility</h2>Reproduces the same app image digest by re-running the build.</div>
+<div class="text-center m-2 py-5 px-4 bg-white border rounded">
+  <h2>Reusability</h2>Leverage production-ready buildpacks maintained by the community.</div>
+</div>
+<h2 id="comparison">Comparison</h2>
+<div style="overflow-x: auto">
+  <table class="text-center bs-0 bg-white border">
+    <caption>Cloud Native Buildpacks comparison with other alternatives</caption>
+    <colgroup>
+      <col style="width:25%">
+      <col style="width:25%">
+      <col style="width:20%">
+      <col style="width:20%">
+      <col style="width:20%">
+      <col style="width:20%">
+    </colgroup>
+    <thead class="bg-white text-pink" style="vertical-align: bottom">
+    <tr>
+      <th></th>
+      <th class="py-3">
+        <div class="px-5 py-3">
+          <?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     viewBox="0 0 125 102" xml:space="preserve">
+<style type="text/css">
+	.st0{enable-background:new    ;}
+	.st1{fill:#242960;}
+	.st2{fill:#DF0A6B;}
+	.st3{fill:#DE156C;}
+	.st4{fill:url(#SVGID_1_);}
+	.st5{fill:#47529D;}
+	.st6{fill:url(#SVGID_2_);}
+	.st7{fill:#252960;}
+	.st8{fill:url(#SVGID_3_);}
+</style>
+  <g transform="translate(108 98)">
+	<g transform="translate(64 54)">
+		<path class="st3" d="M-79.6-86l-22-12.7c-1.9-1.1-4.4-0.5-5.5,1.5c-0.4,0.6-0.5,1.3-0.5,2v25.4c0,1.4,0.8,2.7,2,3.5l26,15
+			c1.2,0.7,2.8,0.7,4,0l26-15c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4c-0.7,0-1.4,0.2-2,0.5l-22,12.7C-76.8-85.3-78.3-85.3-79.6-86
+			z"/>
+
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-916.0929" y1="430.4137" x2="-916.0929"
+                    y2="429.4137" gradientTransform="matrix(30 0 0 -46.1386 27420.2266 19759.4629)">
+			<stop offset="0" style="stop-color:#FC72C7"/>
+      <stop offset="1" style="stop-color:#DE156C"/>
+		</linearGradient>
+    <path class="st4" d="M-77.6-82.5v25.4c0,2.2,1.8,4,4,4c0.7,0,1.4-0.2,2-0.5l22-12.7c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4
+			c-0.7,0-1.4,0.2-2,0.5l-22,12.7C-76.8-85.3-77.6-83.9-77.6-82.5z"/>
+	</g>
+    <g transform="translate(32)">
+		<path class="st5" d="M-53.6-96.7l-22,12.7c-1.2,0.7-2.8,0.7-4,0l-22-12.7c-1.9-1.1-4.4-0.5-5.5,1.5c-0.4,0.6-0.5,1.3-0.5,2v25.4
+			c0,1.4,0.8,2.7,2,3.5l26,15c1.2,0.7,2.8,0.7,4,0l26-15c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4C-52.3-97.2-53-97-53.6-96.7z"/>
+
+      <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-884.0929" y1="484.4137" x2="-884.0929"
+                      y2="483.4137" gradientTransform="matrix(30 0 0 -46.1386 26460.2266 22252.9473)">
+			<stop offset="0" style="stop-color:#8896DB"/>
+        <stop offset="1" style="stop-color:#47529D"/>
+		</linearGradient>
+      <path class="st6" d="M-53.6-96.7l-22,12.7c-1.2,0.7-2,2-2,3.5v25.4c0,2.2,1.8,4,4,4c0.7,0,1.4-0.2,2-0.5l22-12.7
+			c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4C-52.3-97.2-53-97-53.6-96.7z"/>
+	</g>
+    <g transform="translate(0 52)">
+		<path class="st7" d="M-79.6-84l-22-12.7c-1.9-1.1-4.4-0.5-5.5,1.5c-0.4,0.6-0.5,1.3-0.5,2v25.4c0,1.4,0.8,2.7,2,3.5l26,15
+			c1.2,0.7,2.8,0.7,4,0l26-15c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4c-0.7,0-1.4,0.2-2,0.5l-22,12.7C-76.8-83.3-78.3-83.3-79.6-84
+			z"/>
+
+      <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-852.0929" y1="432.4137" x2="-852.0929"
+                      y2="431.4137" gradientTransform="matrix(30 0 0 -46.1386 25500.2266 19853.7383)">
+			<stop offset="0" style="stop-color:#757CBA"/>
+        <stop offset="1" style="stop-color:#252960"/>
+		</linearGradient>
+      <path class="st8" d="M-77.6-80.5v25.4c0,2.2,1.8,4,4,4c0.7,0,1.4-0.2,2-0.5l22-12.7c1.2-0.7,2-2,2-3.5v-25.4c0-2.2-1.8-4-4-4
+			c-0.7,0-1.4,0.2-2,0.5l-22,12.7C-76.8-83.3-77.6-81.9-77.6-80.5z"/>
+	</g>
+</g>
+</svg>
+
+        </div>
+        <div>Cloud Native Buildpacks</div>
+      </th>
+      <th class="py-3">
+        <div class="py-3">
+          <img
+            src="/images/docker.png"
+            style="max-width: 200px; max-height: 50px" alt="docker"/>
+        </div>
+        <div>Dockerfile</div>
+      </th>
+      <th class="py-3" style="min-width: 50%">
+        <div class="py-3">
+          <img
+            src="/images/openshift.png"
+            style="max-width: 100px; max-height: 60px" alt="openshift"/>
+        </div>
+        <div>source-to-image (s2i)</div>
+      </th>
+      <th class="py-3">
+        <div class="py-3">
+          <img
+            src="/images/jib.png"
+            style="max-width: 200px; max-height: 50px" alt="jib"/>
+        </div>
+        <div>Jib</div>
+      </th>
+      <th class="py-3">
+        <div class="py-3">
+          <img
+            src="/images/ko.png"
+            style="max-width: 60px; max-height: 60px" alt="ko"/>
+        </div>
+        <div>ko</div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th class="p-3">
+        Advanced Caching
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Auto-detection
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Bill-of-Materials
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Modular / Pluggable
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">&nbsp;&nbsp;N/A&nbsp;<sup>&dagger;</sup></td>
+      <td class="text-muted">&nbsp;&nbsp;N/A&nbsp;<sup>&dagger;</sup></td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Multi-language
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Multi-process
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Minimal app image
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-pink font-weight-bold">&nbsp;&nbsp;Yes&nbsp;<sup>&diams;</sup></td>
+      <td class="text-pink font-weight-bold">&nbsp;&nbsp;Yes&nbsp;<sup>&ddagger;</sup></td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Rebasing
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Reproducibility
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+    </tr>
+    <tr>
+      <th class="p-3">
+        Reusability
+      </th>
+      <td class="text-pink font-weight-bold border-left border-right">Yes</td>
+      <td class="text-muted">No</td>
+      <td class="text-pink font-weight-bold">Yes</td>
+      <td class="text-muted">&nbsp;&nbsp;N/A&nbsp;<sup>&dagger;</sup></td>
+      <td class="text-muted">&nbsp;&nbsp;N/A&nbsp;<sup>&dagger;</sup></td>
+    </tr>
+    <tr class="border-bottom border-top bg-light">
+      <th class="p-3">Integrations</th>
+      <td class="text-left pl-5 align-text-top border-left border-right">
+        <ul class="list-circle">
+          <li>Azure</li>
+          <li>CircleCI</li>
+          <li>GitLab</li>
+          <li>Google</li>
+          <li>Heroku</li>
+          <li>Spring Boot</li>
+          <li>Tekton</li>
+          <li>...</li>
+        </ul>
+      </td>
+      <td class="text-left pl-5 align-text-top">
+        <ul class="list-circle">
+          <li>Amazon ECS</li>
+          <li>Azure</li>
+          <li>CircleCI</li>
+          <li>GitLab</li>
+          <li>Google</li>
+          <li>Tekton</li>
+          <li>...</li>
+        </ul>
+      </td>
+      <td class="text-left pl-5 align-text-top">
+        <ul class="list-circle">
+          <li>OpenShift</li>
+        </ul>
+      </td>
+      <td class="text-left pl-5 align-text-top">
+        <ul class="list-circle">
+          <li>Gradle</li>
+          <li>Maven</li>
+        </ul>
+      </td>
+      <td class="text-left pl-5 align-text-top">
+        <ul class="list-circle">
+          <li>Terraform</li>
+          <li>GoReleaser</li>
+          <li>Skaffold</li>
+          <li>Carvel kbld</li>
+          <li>Tilt</li>
+          <li>...</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th class="p-3">Governance</th>
+      <td class="border-left border-right">CNCF</td>
+      <td>Docker</td>
+      <td>Red Hat</td>
+      <td>Google</td>
+      <td>CNCF</td>
+    </tr>
+    <tr class="border-top bg-light">
+      <th class="p-3">Best for Building...</th>
+      <td class="border-left border-right text-left pl-6 align-text-top">
+        <ul class="list-circle">
+          <li>Applications</li>
+        </ul>
+      </td>
+      <td class="text-left pl-6 align-text-top">
+        <ul class="list-circle">
+          <li>Applications</li>
+          <li>Base images</li>
+          <li>OS Images</li>
+        </ul>
+        <td class="text-left pl-6 align-text-top">
+          <ul class="list-circle">
+            <li>Applications</li>
+          </ul>
+        </td>
+        <td class="text-left pl-6 align-text-top">
+          <ul class="list-circle">
+            <li>Applications</li>
+          </ul>
+        </td>
+        <td class="text-left pl-6 align-text-top">
+          <ul class="list-circle">
+            <li>Applications</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="py-4 small">
+  <ul class="list-unstyled">
+    <li><sup>&dagger;</sup> This feature does not apply to solution.</li>
+    <li><sup>&ddagger;</sup> Requires additional configuration which adversely affects other features.</li>
+    <li><sup>&diams;</sup> Requires additional configuration.</li>
+  </ul>
+</div>
+
+
+
+        <hr>
+<div class='footline d-block'>
+  <div class="support-links text-right">
+  
+    
+    
+    <a href="https://github.com/buildpacks/docs/issues/new?body=%2A%2AOn&#43;Page%3A%2A%2A&#43;%5BFeatures%5D%28https%3A%2F%2Fbuildpacks.io%2Ffeatures%2F%29"
+       class="button-light button-small icon-button blank bg-white inline-flex" target="_blank">Report Issue</a>
+
+    
+    
+    <a href="https://github.com/buildpacks/docs/edit/main/content/features.md?description=Signed-off-by%3A&#43;NAME&#43;%3CEMAIL_ADDRESS%3E%0A%0A%3E&#43;_By&#43;signing&#43;off&#43;you&#43;acknowledge&#43;adhering&#43;to&#43;the&#43;requirements&#43;listed&#43;here%3A&#43;https%3A%2F%2Fprobot.github.io%2Fapps%2Fdco%2F_"
+       class="button-light button-small icon-button github-button bg-white inline-flex" target="_blank">Edit</a>
+    
+  
+</div>
+
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <footer>
+  <div class="container footer">
+    <a href="https://www.cncf.io/" style="width: 50%;"><img src="/images/cncf-color.svg" class="footer-logo" alt="CNCF logo" ></a>
+    <p>We are a <a href="https://www.cncf.io/">Cloud Native Computing Foundation</a> incubating project.</p>
+  </div>
+  <div class="bg-blue">
+    <div class="container sub-footer">
+      <ul>
+        
+        <li><a target="_blank" rel="noopener noreferrer" href="https://buildpacks.devstats.cncf.io/d/8/dashboards?orgId=1&amp;refresh=15m">DevStats</a></li>
+        
+        <li><span>&bull;</span><a target="_blank" rel="noopener noreferrer" href="https://www.linuxfoundation.org/privacy/">Privacy Policy</a></li>
+        
+      </ul>
+
+      <ul>
+        
+        <li><a target="_blank" rel="noopener noreferrer" href="https://lists.cncf.io/g/cncf-buildpacks/join">Mailing List</a></li>
+        
+        <li><span>&bull;</span><a target="_blank" rel="noopener noreferrer" href="https://slack.cncf.io">Slack</a></li>
+        
+        <li><span>&bull;</span><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/buildpacks_io">Twitter</a></li>
+        
+        <li><span>&bull;</span><a target="_blank" rel="noopener noreferrer" href="https://github.com/buildpacks">GitHub</a></li>
+        
+      </ul>
+    </div>
+    <div class="container sub-footer">
+      <ul>
+        <li><p>Copyright © 2022 The Linux Foundation ®. All rights reserved. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="(https://www.linuxfoundation.org/trademark-usage">Trademark Usage page</a></p></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.6.1/asciinema-player.min.js"></script>
+</body>
+
+</html>
