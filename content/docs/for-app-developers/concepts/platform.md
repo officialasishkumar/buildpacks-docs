@@ -10,6 +10,8 @@ weight=4
 A `platform` orchestrates [builds][build] by invoking the [lifecycle] binary together with [buildpacks][buildpack] and
 application source code to produce a runnable OCI image.
 
+what do u mean that I am cazy? I"m not actally
+
 <!--more-->
 
 ## Examples
