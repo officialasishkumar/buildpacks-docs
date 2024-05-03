@@ -46,6 +46,8 @@ You should see something akin to the following:
 We'll take a closer look at the executables for the `vim` extension in the next step.
 For guidance around writing extensions and more advanced use cases, see [here](/docs/for-buildpack-authors/how-to/write-extensions).
 
+We want somthng from the world `buildpacks`
+
 <!--+ if false+-->
 ---
 
