@@ -236,14 +236,14 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/tutorials/basic-buildpack/02_building-blocks-cnb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/tutorials/basic-buildpack/02_building-blocks-cnb/</guid>
-      <description>Now we will set up the buildpack scaffolding.&#xA;Let&amp;rsquo;s create the directory where your buildpack will live:&#xA;Using the Pack CLI The buildpack new &amp;lt;id&amp;gt; command will create a directory named for the buildpack ID.&#xA;Example:&#xA;pack buildpack new examples/node-js \ --api 0.10 \ --path node-js-buildpack \ --version 0.0.1 \ --stacks io.buildpacks.samples.stacks.jammy This command will create node-js-buildpack directory which contains buildpack.toml, bin/build, bin/detect files.&#xA;Additional Parameters -a, --api Buildpack API compatibility of the generated buildpack -h, --help Help for &amp;rsquo;new&#39; --path the location on the filesystem to generate the artifacts --stacks Stacks (deprecated) the buildpack will work with -V, --version the version of the buildpack in buildpack.</description>
+      <description>Now we will set up the buildpack scaffolding.&#xA;Let&amp;rsquo;s create the directory where your buildpack will live:&#xA;Using the Pack CLI The buildpack new &amp;lt;id&amp;gt; command will create a directory named for the buildpack ID. Make sure to run this command outside the node-js-sample-app directory created previously.&#xA;Example:&#xA;pack buildpack new examples/node-js \ --api 0.10 \ --path node-js-buildpack \ --version 0.0.1 \ --stacks io.buildpacks.samples.stacks.jammy This command will create node-js-buildpack directory which contains buildpack.</description>
     </item>
     <item>
       <title>Use the build plan</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-build-plan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/write-buildpacks/use-build-plan/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/buildpacks/spec/blob/main/buildpack.md#build-plan-toml&#34;&gt;Build Plan&lt;/a&gt; is a document that buildpacks can use to pass information between the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; phases, and between each other.&#xA;The build plan is passed (by the lifecycle) as a parameter to the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; binaries of each buildpack.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://buildpacks.io/docs/for-buildpack-authors/concepts/build-plan/&#34;&gt;Build Plan&lt;/a&gt; is a document that buildpacks can use to pass information between the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; phases, and between each other.&#xA;The build plan is passed (by the lifecycle) as a parameter to the &lt;code&gt;detect&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; binaries of each buildpack.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a builder?</title>
@@ -264,7 +264,7 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/buildpack-group/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/buildpack-group/</guid>
-      <description>&lt;p&gt;A buildpack group is a list of individual buildpacks that are designged to work together to build an application.&lt;/p&gt;</description>
+      <description>&lt;p&gt;A buildpack group is a list of individual buildpacks that are designed to work together to build an application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why this feature?</title>
@@ -586,7 +586,7 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/tutorials/basic-buildpack/06_caching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/tutorials/basic-buildpack/06_caching/</guid>
-      <description>We can improve performance by caching the runtime between builds, only re-downloading when necessary. To begin, let&amp;rsquo;s cache the runtime layer.&#xA;Cache the runtime layer To do this, replace the following lines in the build script:&#xA;# 4. MAKE node-js AVAILABLE DURING LAUNCH echo -e &amp;#39;[types]\nlaunch = true&amp;#39; &amp;gt; &amp;#34;${CNB_LAYERS_DIR}/node-js.toml&amp;#34; with the following:&#xA;# 4. MAKE node-js AVAILABLE DURING LAUNCH and CACHE it echo -e &amp;#39;[types]\ncache = true\nlaunch = true&amp;#39; &amp;gt; &amp;#34;${CNB_LAYERS_DIR}/node-js.</description>
+      <description>We can improve performance by caching the runtime between builds, only re-downloading when necessary. To begin, let&amp;rsquo;s cache the runtime layer.&#xA;Cache the runtime layer To do this, replace the following lines in the build script:&#xA;# 3. MAKE node-js AVAILABLE DURING LAUNCH echo -e &amp;#39;[types]\nlaunch = true&amp;#39; &amp;gt; &amp;#34;${CNB_LAYERS_DIR}/node-js.toml&amp;#34; with the following:&#xA;# 3. MAKE node-js AVAILABLE DURING LAUNCH and CACHE it echo -e &amp;#39;[types]\ncache = true\nlaunch = true&amp;#39; &amp;gt; &amp;#34;${CNB_LAYERS_DIR}/node-js.</description>
     </item>
     <item>
       <title>Tekton</title>
@@ -663,7 +663,7 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/how-to/distribute-buildpacks/craft-order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/how-to/distribute-buildpacks/craft-order/</guid>
-      <description></description>
+      <description>&lt;p&gt;An &lt;code&gt;order&lt;/code&gt; is a list of one or more &lt;code&gt;groups&lt;/code&gt; to be tested against application source code, so that the appropriate &lt;code&gt;group&lt;/code&gt; for a build can be determined.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Create a stack (deprecated)</title>
@@ -726,35 +726,35 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/layer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/layer/</guid>
-      <description></description>
+      <description>&lt;p&gt;&lt;code&gt;Dependency layers&lt;/code&gt; are semantically meaningful layers that are contributed by one or more buildpacks during the &lt;code&gt;build&lt;/code&gt; phase, one for each dependency.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a buildpack package?</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/package/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/package/</guid>
-      <description></description>
+      <description>&lt;p&gt;A &lt;code&gt;buildpack package&lt;/code&gt; refers to the process of packaging buildpacks for distribution as OCI images or OCI-compatible &lt;code&gt;tar&lt;/code&gt; files.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a component buildpack?</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/component-buildpack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/component-buildpack/</guid>
-      <description></description>
+      <description>&lt;p&gt;A &lt;strong&gt;component buildpack&lt;/strong&gt; is a buildpack containing &lt;code&gt;/bin/detect&lt;/code&gt; and &lt;code&gt;/bin/build&lt;/code&gt; executables and that implements the &lt;a href=&#34;https://github.com/buildpacks/spec/blob/main/buildpack.md#buildpack-interface&#34;&gt;Buildpack Interface&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is a composite buildpack?</title>
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/composite-buildpack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/composite-buildpack/</guid>
-      <description>A composite buildpack, also sometimes called a &amp;ldquo;meta-buildpack&amp;rdquo;, is a buildpack that does not contain any ./bin/detect or ./bin/build binaries, but instead references other buildpacks in its buildpack.toml via the [[order]] array.&#xA;This is useful for composing more complex detection strategies.</description>
+      <description>A composite buildpack, also sometimes called a &amp;ldquo;meta buildpack&amp;rdquo;, is a buildpack that does not contain any ./bin/detect or ./bin/build binaries, but instead references other buildpacks in its buildpack.toml via the [[order]] array.&#xA;This is useful for composing more complex detection strategies.</description>
     </item>
     <item>
       <title>What is a composite buildpack?</title>
       <link>https://buildpacks.io/docs/for-platform-operators/concepts/composite-buildpack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-platform-operators/concepts/composite-buildpack/</guid>
-      <description>A composite buildpack, also sometimes called a &amp;ldquo;meta-buildpack&amp;rdquo;, is a buildpack that does not contain any ./bin/detect or ./bin/build binaries, but instead references other buildpacks in its buildpack.toml via the [[order]] array.&#xA;This is useful for composing more complex detection strategies.</description>
+      <description>A composite buildpack, also sometimes called a &amp;ldquo;meta buildpack&amp;rdquo;, is a buildpack that does not contain any ./bin/detect or ./bin/build binaries, but instead references other buildpacks in its buildpack.toml via the [[order]] array.&#xA;This is useful for composing more complex detection strategies.</description>
     </item>
     <item>
       <title>What is an image extension?</title>
@@ -775,7 +775,7 @@
       <link>https://buildpacks.io/docs/for-buildpack-authors/concepts/build-plan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-buildpack-authors/concepts/build-plan/</guid>
-      <description></description>
+      <description>&lt;p&gt;A &lt;strong&gt;build plan&lt;/strong&gt; is a &lt;code&gt;toml&lt;/code&gt; file that is the output of the &lt;a href=&#34;https://buildpacks.io/docs/for-buildpack-authors/concepts/lifecycle-phases/#phase-2-detect&#34;&gt;detect&lt;/a&gt; phase, in which each component buildpack or image extension may express the dependencies it requires and the dependencies it provides.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Specify an image extension in a builder</title>
@@ -1104,6 +1104,62 @@
       <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_inspect/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_inspect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest add</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_add/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_add/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest annotate</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_annotate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_annotate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest create</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_create/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_create/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest inspect</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_inspect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_inspect/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest push</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_push/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_push/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest remove</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_remove/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_remove/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pack manifest rm</title>
+      <link>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_rm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/cli/pack_manifest_rm/</guid>
       <description></description>
     </item>
     <item>
